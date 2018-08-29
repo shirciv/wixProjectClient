@@ -1,0 +1,63 @@
+<router-outlet></router-outlet>
+
+<div>
+  <div>
+    <head>
+      <style>
+        table, th, td {  
+            padding: 5px;
+            background-color: #bffff1;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 3px solid rgb(30, 131, 114);
+            border-collapse: collapse;
+        }
+        td,th{
+            width: 200px;
+        }
+        th{
+          font-size: large;
+          color: rgb(40, 126, 104);
+          height: 30px;
+        }
+
+        a:link, a:visited {
+          
+          padding: 14px 25px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+        a:hover, a:active {
+          color: white;
+          background-color: rgb(30, 131, 114);
+        }
+      </style>
+
+    </head> 
+    <h1 align="center">Forms List Page  </h1><br><br>
+    <table align="center">
+      <tr>
+        <th>Form Id</th>
+        <th>Form Name</th>
+        <th># Submissions</th>
+        <th>Submit Page</th>
+        <th>Submission Page</th>
+    </tr>
+    <tr *ngFor="let oneform of forms">
+        <td>{{oneform.id}}</td>
+        <td>{{oneform.formName}}</td>
+        <td>{{oneform.numOfSub}}</td>
+        <td>
+          <a href="http://localhost:4200/SubmitPage/{{oneform.id}}" target="_self">view</a>
+        </td>
+        <td>
+          <a href="http://localhost:4200/SubmissionPage/{{oneform.id}}" target="_self">view</a>
+        </td>
+    </tr>
+    </table>
+
+      <p style="text-align:center" >
+        <a href="/NewForm" target="_self" style=" background-color: rgb(30, 131, 114)  ;color: white">CREATE NEW FORM</a> 
+      </p>>
+  </div>
+</div>

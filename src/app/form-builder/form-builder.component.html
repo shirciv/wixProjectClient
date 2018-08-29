@@ -1,0 +1,55 @@
+<style>
+div{
+  border: 2px solid rgb(10, 100, 85);
+  border-radius: 4px;
+  align-content: center;
+  padding: 12px 20px;
+    margin: 4px 0;
+    box-sizing: border-box;
+}
+p{
+      color: rgb(10, 100, 85);
+  }
+select{
+  width:80px;
+  height: 40px;
+  border: 2px solid rgb(10, 100, 85);
+}
+</style>
+
+<h1 align=center >Form Builder Page</h1>
+<div align=center>please add the fields you would like to have in your form: <br>
+label: <input #newLabel type=text name="newLabel"  />  
+input name: <input  #newInputName type=text name="newInputName" />   
+type:<select #newType name=newType > 
+  <option value="text">text</option>
+  <option value="date">date</option>
+  <option value="tel">tel</option>
+  <option value="email">email</option>
+  <option value="number">number</option>
+  <option value="color">color</option>
+</select>
+<br>  
+<button type="submit" (click)="addField(newLabel.value,newInputName.value,newType.value); newLabel.value='';
+          newInputName.value=''; newType.value=''">add field</button>
+</div>
+<br><br><br><br>
+
+
+  <div class=Field >
+  <h3>form preview:</h3>
+  <p *ngFor="let oneField of fields"> {{oneField.label}}:  <br>
+    <input type={{oneField.type}} name ={{oneField.inputName}}  disabled> <br>
+    </p> 
+</div>
+
+<br>
+<p align=center >when you are done adding fields please insert form name:
+  <input #newFormName type=text name=formName> <br>
+  and press 'save':
+  <button (click)="addNewForm(newFormName.value); newFormName.value=''" > SAVE</button>
+</p>
+<br><br>
+<a href="/Forms" target="_self"  align="center">back to forms list page </a>
+
+

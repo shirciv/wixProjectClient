@@ -1,0 +1,25 @@
+<style>
+    body{
+    background-color: aquamarine;
+    color: rgb(10, 100, 85);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    p{
+      color: rgb(10, 100, 85);
+    }
+   
+  </style>
+
+<h1 align="center">Form Submit Page</h1>
+<form>
+  <div class=Field>
+    <p *ngFor="let oneField of fields"> {{oneField.label}}:  <br>
+    <input id={{oneField.label}} type={{oneField.type}} name ={{oneField.inputName}}> <br>
+  </p> 
+    <button (click)="addNewUser()" >SUBMIT</button>  <!--should post Users-->
+  
+    </div>
+</form>
+
+<br><br>
+<a href="/Forms" target="_self"  align="center">back to forms list page </a>
